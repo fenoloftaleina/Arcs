@@ -35,14 +35,7 @@
     (when ctx
       (doto ctx
         (.clearRect 0 0 (.-width (.-canvas ctx)) (.-height (.-canvas ctx)))
-        (-> (.-strokeStyle) (set! "#222"))
-        (-> (.-lineWidth) (set! 3))
-        (.beginPath)
-        (.moveTo (:x start) (:y start))
-        (.bezierCurveTo (:x control1) (:y control1)
-                        (:x control2) (:y control2)
-                        (:x end) (:y end))
-        (.stroke)
+
         (-> (.-strokeStyle) (set! "#ccc"))
         (-> (.-lineWidth) (set! 1))
         (.beginPath)
@@ -53,6 +46,16 @@
         (.moveTo (:x end) (:y end))
         (.lineTo (:x control2) (:y control2))
         (.stroke)
+
+        (-> (.-strokeStyle) (set! "#222"))
+        (-> (.-lineWidth) (set! 3))
+        (.beginPath)
+        (.moveTo (:x start) (:y start))
+        (.bezierCurveTo (:x control1) (:y control1)
+                        (:x control2) (:y control2)
+                        (:x end) (:y end))
+        (.stroke)
+
         (draw-point control1)
         (draw-point control2)
         (draw-point start)

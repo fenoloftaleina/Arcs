@@ -4,84 +4,84 @@ if((typeof main !== 'undefined') && (typeof main.core !== 'undefined') && (typeo
 main.core.state = reagent.core.atom.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"arc","arc",252411045),new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"x","x",2099068185),(65),new cljs.core.Keyword(null,"y","y",-1757859776),130.5625,new cljs.core.Keyword(null,"highlighted?","highlighted?",-651870065),false], null),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"x","x",2099068185),(226),new cljs.core.Keyword(null,"y","y",-1757859776),321.5625,new cljs.core.Keyword(null,"highlighted?","highlighted?",-651870065),false,new cljs.core.Keyword(null,"control?","control?",1420034601),true], null),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"x","x",2099068185),(682),new cljs.core.Keyword(null,"y","y",-1757859776),63.5625,new cljs.core.Keyword(null,"highlighted?","highlighted?",-651870065),false,new cljs.core.Keyword(null,"control?","control?",1420034601),true], null),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"x","x",2099068185),(844),new cljs.core.Keyword(null,"y","y",-1757859776),245.5625,new cljs.core.Keyword(null,"highlighted?","highlighted?",-651870065),false], null)], null),new cljs.core.Keyword(null,"ctx","ctx",-493610118),null], null));
 }
 main.core.point_r = (5);
-main.core.draw_point = (function main$core$draw_point(ctx,p__26868){
-var map__26869 = p__26868;
-var map__26869__$1 = cljs.core.__destructure_map(map__26869);
-var x = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26869__$1,new cljs.core.Keyword(null,"x","x",2099068185));
-var y = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26869__$1,new cljs.core.Keyword(null,"y","y",-1757859776));
-var highlighted_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26869__$1,new cljs.core.Keyword(null,"highlighted?","highlighted?",-651870065));
-var control_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26869__$1,new cljs.core.Keyword(null,"control?","control?",1420034601));
-var G__26870 = ctx;
-G__26870.beginPath();
+main.core.draw_point = (function main$core$draw_point(ctx,p__26774){
+var map__26775 = p__26774;
+var map__26775__$1 = cljs.core.__destructure_map(map__26775);
+var x = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26775__$1,new cljs.core.Keyword(null,"x","x",2099068185));
+var y = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26775__$1,new cljs.core.Keyword(null,"y","y",-1757859776));
+var highlighted_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26775__$1,new cljs.core.Keyword(null,"highlighted?","highlighted?",-651870065));
+var control_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26775__$1,new cljs.core.Keyword(null,"control?","control?",1420034601));
+var G__26776 = ctx;
+G__26776.beginPath();
 
-(G__26870.strokeStyle = (cljs.core.truth_(highlighted_QMARK_)?"rgb(241 102 102)":(cljs.core.truth_(control_QMARK_)?"#ccc":"#222"
+(G__26776.strokeStyle = (cljs.core.truth_(highlighted_QMARK_)?"rgb(241 102 102)":(cljs.core.truth_(control_QMARK_)?"#ccc":"#222"
 )));
 
-(G__26870.lineWidth = (2));
+(G__26776.lineWidth = (2));
 
-G__26870.arc(x,y,main.core.point_r,(0),((2) * Math.PI),false);
+G__26776.arc(x,y,main.core.point_r,(0),((2) * Math.PI),false);
 
-(G__26870.fillStyle = "#eee");
+(G__26776.fillStyle = "#eee");
 
-G__26870.fill();
+G__26776.fill();
 
-G__26870.stroke();
+G__26776.stroke();
 
-return G__26870;
+return G__26776;
 });
 main.core.draw_canvas = (function main$core$draw_canvas(){
-var map__26871 = cljs.core.deref(main.core.state);
-var map__26871__$1 = cljs.core.__destructure_map(map__26871);
-var arc = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26871__$1,new cljs.core.Keyword(null,"arc","arc",252411045));
-var ctx = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26871__$1,new cljs.core.Keyword(null,"ctx","ctx",-493610118));
-var vec__26872 = arc;
-var start = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26872,(0),null);
-var control1 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26872,(1),null);
-var control2 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26872,(2),null);
-var end = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26872,(3),null);
+var map__26777 = cljs.core.deref(main.core.state);
+var map__26777__$1 = cljs.core.__destructure_map(map__26777);
+var arc = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26777__$1,new cljs.core.Keyword(null,"arc","arc",252411045));
+var ctx = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26777__$1,new cljs.core.Keyword(null,"ctx","ctx",-493610118));
+var vec__26778 = arc;
+var start = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26778,(0),null);
+var control1 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26778,(1),null);
+var control2 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26778,(2),null);
+var end = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26778,(3),null);
 if(cljs.core.truth_(ctx)){
-var G__26875_26886 = ctx;
-G__26875_26886.clearRect((0),(0),ctx.canvas.width,ctx.canvas.height);
+var G__26781_26792 = ctx;
+G__26781_26792.clearRect((0),(0),ctx.canvas.width,ctx.canvas.height);
 
-(G__26875_26886.strokeStyle = "#222");
+(G__26781_26792.strokeStyle = "#ccc");
 
-(G__26875_26886.lineWidth = (3));
+(G__26781_26792.lineWidth = (1));
 
-G__26875_26886.beginPath();
+G__26781_26792.beginPath();
 
-G__26875_26886.moveTo(new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(start),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(start));
+G__26781_26792.moveTo(new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(start),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(start));
 
-G__26875_26886.bezierCurveTo(new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(control1),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(control1),new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(control2),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(control2),new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(end),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(end));
+G__26781_26792.lineTo(new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(control1),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(control1));
 
-G__26875_26886.stroke();
+G__26781_26792.stroke();
 
-(G__26875_26886.strokeStyle = "#ccc");
+G__26781_26792.beginPath();
 
-(G__26875_26886.lineWidth = (1));
+G__26781_26792.moveTo(new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(end),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(end));
 
-G__26875_26886.beginPath();
+G__26781_26792.lineTo(new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(control2),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(control2));
 
-G__26875_26886.moveTo(new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(start),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(start));
+G__26781_26792.stroke();
 
-G__26875_26886.lineTo(new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(control1),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(control1));
+(G__26781_26792.strokeStyle = "#222");
 
-G__26875_26886.stroke();
+(G__26781_26792.lineWidth = (3));
 
-G__26875_26886.beginPath();
+G__26781_26792.beginPath();
 
-G__26875_26886.moveTo(new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(end),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(end));
+G__26781_26792.moveTo(new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(start),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(start));
 
-G__26875_26886.lineTo(new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(control2),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(control2));
+G__26781_26792.bezierCurveTo(new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(control1),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(control1),new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(control2),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(control2),new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(end),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(end));
 
-G__26875_26886.stroke();
+G__26781_26792.stroke();
 
-main.core.draw_point(G__26875_26886,control1);
+main.core.draw_point(G__26781_26792,control1);
 
-main.core.draw_point(G__26875_26886,control2);
+main.core.draw_point(G__26781_26792,control2);
 
-main.core.draw_point(G__26875_26886,start);
+main.core.draw_point(G__26781_26792,start);
 
-main.core.draw_point(G__26875_26886,end);
+main.core.draw_point(G__26781_26792,end);
 
 } else {
 }
@@ -105,8 +105,8 @@ var diff_x = (new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invo
 var diff_y = (new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(point) - y);
 var complementary_path = ((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2((0),path))?(1):((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2((3),path))?(2):null));
 var complementary_point = (cljs.core.truth_(complementary_path)?cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(cljs.core.deref(main.core.state),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"arc","arc",252411045),complementary_path], null)):null);
-cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(main.core.state,cljs.core.update_in,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"arc","arc",252411045),path], null),(function (p1__26876_SHARP_){
-return cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([p1__26876_SHARP_,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"x","x",2099068185),x,new cljs.core.Keyword(null,"y","y",-1757859776),y,new cljs.core.Keyword(null,"highlighted?","highlighted?",-651870065),true], null)], 0));
+cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(main.core.state,cljs.core.update_in,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"arc","arc",252411045),path], null),(function (p1__26782_SHARP_){
+return cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([p1__26782_SHARP_,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"x","x",2099068185),x,new cljs.core.Keyword(null,"y","y",-1757859776),y,new cljs.core.Keyword(null,"highlighted?","highlighted?",-651870065),true], null)], 0));
 }));
 
 if(cljs.core.truth_(complementary_path)){
@@ -116,22 +116,22 @@ return null;
 }
 });
 main.core.on_mousedown = (function main$core$on_mousedown(canvas_rect,event){
-var vec__26877 = main.core.__GT_xy(canvas_rect,event);
-var x = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26877,(0),null);
-var y = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26877,(1),null);
-var map__26880 = cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (p__26881,point){
-var map__26882 = p__26881;
-var map__26882__$1 = cljs.core.__destructure_map(map__26882);
-var path = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26882__$1,new cljs.core.Keyword(null,"path","path",-188191168));
+var vec__26783 = main.core.__GT_xy(canvas_rect,event);
+var x = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26783,(0),null);
+var y = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26783,(1),null);
+var map__26786 = cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (p__26787,point){
+var map__26788 = p__26787;
+var map__26788__$1 = cljs.core.__destructure_map(map__26788);
+var path = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26788__$1,new cljs.core.Keyword(null,"path","path",-188191168));
 if(((main.core.in_vicinity_QMARK_((x - new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(point)))) && (main.core.in_vicinity_QMARK_((y - new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(point)))))){
 return cljs.core.reduced(new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"path","path",-188191168),path,new cljs.core.Keyword(null,"hit","hit",1909257382),true], null));
 } else {
 return new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"path","path",-188191168),(path + (1))], null);
 }
 }),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"path","path",-188191168),(0)], null),new cljs.core.Keyword(null,"arc","arc",252411045).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(main.core.state)));
-var map__26880__$1 = cljs.core.__destructure_map(map__26880);
-var point_path = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26880__$1,new cljs.core.Keyword(null,"path","path",-188191168));
-var hit = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26880__$1,new cljs.core.Keyword(null,"hit","hit",1909257382));
+var map__26786__$1 = cljs.core.__destructure_map(map__26786);
+var point_path = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26786__$1,new cljs.core.Keyword(null,"path","path",-188191168));
+var hit = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26786__$1,new cljs.core.Keyword(null,"hit","hit",1909257382));
 cljs.core.prn.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"x","x",2099068185),x,new cljs.core.Keyword(null,"y","y",-1757859776),y], 0));
 
 if(cljs.core.truth_(hit)){
@@ -146,9 +146,9 @@ main.core.on_mousemove = (function main$core$on_mousemove(canvas_rect,event){
 var temp__5753__auto__ = new cljs.core.Keyword(null,"dragging-path","dragging-path",503299662).cljs$core$IFn$_invoke$arity$1(cljs.core.deref(main.core.state));
 if(cljs.core.truth_(temp__5753__auto__)){
 var path = temp__5753__auto__;
-var vec__26883 = main.core.__GT_xy(canvas_rect,event);
-var x = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26883,(0),null);
-var y = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26883,(1),null);
+var vec__26789 = main.core.__GT_xy(canvas_rect,event);
+var x = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26789,(0),null);
+var y = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__26789,(1),null);
 return main.core.move_point(path,x,y);
 } else {
 return null;
