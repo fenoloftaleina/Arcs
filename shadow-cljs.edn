@@ -1,0 +1,20 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src"]
+
+ :dev-http {8080 "."}
+
+ :dependencies
+ [[reagent/reagent "1.1.0"]]
+
+ :nrepl {:port 3333}
+
+ :builds
+ {:app
+  {:target :browser
+   :output-dir "js"
+   :asset-path "/js"
+
+   :modules
+   {:main
+    {:entries [main.core]}}}}}
