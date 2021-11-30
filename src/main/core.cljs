@@ -76,6 +76,25 @@
 (defn in-vicinity? [v]
   (<= (js/Math.abs v) point-r))
 
+(defn move-point [path x y]
+  (let [point (get-in @state [:arc path])
+        diff-x (- (:x point) x)
+        diff-y (- (:y point) y)
+        complementary-path (cond
+                             (= 0 path)
+                             1
+
+                             (= 3 path)
+                             2)
+        complementary-point (when complementary-path
+                              (get-in @state [:arc complementary-path]))]
+    (swap! state assoc-in [:arc path] {:x x :y y :highlighted? true})
+    (when complementary-path
+      (swap! state assoc-in
+             [:arc complementary-path]
+             {:x (- (:x complementary-point) diff-x)
+              :y (- (:y complementary-point) diff-y)}))))
+
 (defn on-mousedown [canvas-rect event]
   (let [[x y] (->xy canvas-rect event)
         {point-path :path hit :hit}
@@ -89,13 +108,13 @@
           (:arc @state))]
     (prn :x x :y y)
     (when hit
-      (swap! state assoc-in [:arc point-path] {:x x :y y :highlighted? true})
+      (move-point point-path x y)
       (swap! state assoc :dragging-path point-path))))
 
 (defn on-mousemove [canvas-rect event]
   (when-let [path (:dragging-path @state)]
     (let [[x y] (->xy canvas-rect event)]
-      (swap! state assoc-in [:arc path] {:x x :y y :highlighted? true}))))
+      (move-point path x y))))
 
 (defn on-mouseup [canvas-rect event]
   (when-let [path (:dragging-path @state)]
