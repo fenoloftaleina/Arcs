@@ -7,8 +7,8 @@
 (defonce state
   (r/atom
     {:arc [{:x 65, :y 130.5625, :highlighted? false}
-           {:x 226, :y 321.5625, :highlighted? false}
-           {:x 682, :y 63.5625, :highlighted? false}
+           {:x 226, :y 321.5625, :highlighted? false :control? true}
+           {:x 682, :y 63.5625, :highlighted? false :control? true}
            {:x 844, :y 245.5625, :highlighted? false}]
      :ctx nil}))
 
@@ -16,10 +16,13 @@
 
 ;; :on-change #(reset! time-color (-> % .-target .-value))}]])
 
-(defn draw-point [ctx {:keys [x y highlighted?]}]
+(defn draw-point [ctx {:keys [x y highlighted? control?]}]
   (doto ctx
     (.beginPath)
-    (-> (.-strokeStyle) (set! (if highlighted? "rgb(241 102 102)" "#ccc")))
+    (-> (.-strokeStyle) (set! (cond
+                                highlighted? "rgb(241 102 102)"
+                                control? "#ccc"
+                                :else "#222")))
     (-> (.-lineWidth) (set! 2))
     (.arc x y point-r 0 (* 2 js/Math.PI) false)
     (-> (.-fillStyle) (set! "#eee"))
@@ -88,7 +91,7 @@
                              2)
         complementary-point (when complementary-path
                               (get-in @state [:arc complementary-path]))]
-    (swap! state assoc-in [:arc path] {:x x :y y :highlighted? true})
+    (swap! state update-in [:arc path] #(merge % {:x x :y y :highlighted? true}))
     (when complementary-path
       (swap! state assoc-in
              [:arc complementary-path]
